@@ -2,6 +2,11 @@ name: hello-world-spring-boot
 
 on: [push]
 
+env:
+  DOCKERUSERNAME:DOCKERUSERNAME
+  DOCKERPASSWORD:DOCKERPASSWORD
+  HELLOWORLDREPO:HELLOWORLDREPO  
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,3 +21,10 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean install
+        
+  deployment:
+     runs-on: ubuntu-latest
+ 
+     steps:
+       - name: Deployment
+         run : echo "${{ env.DOCKERUSERNAME }}"
