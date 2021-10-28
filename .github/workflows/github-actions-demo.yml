@@ -6,7 +6,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: testing
 
     steps:
       - uses: actions/checkout@v2
@@ -19,4 +18,4 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: print environment
-        run : echo "${{ build.<job_id>.environment.DOCKERUSERNAME }}"
+        run : docker build -t hellworld:latest .
