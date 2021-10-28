@@ -19,4 +19,4 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: print environment
-        run : echo "${{ jobs.<job_id>.environment.DOCKERUSERNAME }}"
+        run : echo "${{ build.<job_id>.environment.DOCKERUSERNAME }}"
