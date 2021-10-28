@@ -18,10 +18,6 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
      
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
       - uses: docker/login-action@v1
         with:
           username: 'taleevaalam'
