@@ -10,6 +10,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: testing
 
     steps:
       - uses: actions/checkout@v2
@@ -21,11 +22,4 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn clean install
-        
-  deployment:
-     runs-on: ubuntu-latest
-     environment: testing
- 
-     steps:
-       - name: Deployment
-         run : echo "${{ env.DOCKERUSERNAME }}"
+        run : echo "${{ env.DOCKERUSERNAME }}"
